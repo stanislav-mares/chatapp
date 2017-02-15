@@ -1,0 +1,260 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.root {
+	width: 100%;
+	height: 100%;	
+}
+
+.mainContainer {
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	width: 100%;
+	height: 10%;
+}
+
+.headerPanel {
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+	width: 100%;
+	height: 80%;
+	position: relative;
+}
+
+.footer {
+	width: 100%;
+	height: 10%;
+}
+
+.mainArea {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.asideBar {
+	width: 20%;
+	height: 100%;
+	box-sizing: border-box;
+	float: left;
+}
+
+.sectionWindow {
+	width: 60%;
+	height: 100%;
+	box-sizing: border-box;
+	float: left;
+	position: relative;
+	margin: auto;
+}
+
+.title {
+	/*border-bottom: 1px solid #95a5a6;*/
+}
+
+.row {
+	padding: 0;
+	margin: 0;
+}
+.textColorWhite {
+	color: #ffffff;
+}
+
+.textColorGray {
+	color: #95a5a6;
+}
+
+.textColorDarkBlue {
+	color: #2c3e50;
+}
+
+.textColorLightBlue {
+	color: #3498db;
+}
+
+.textColorOrange {
+	color: #f39c12;
+}
+
+.textColorGreen {
+	color: #18bc9c;
+}
+
+.textColorRed {
+	color: #e74c3c;
+}
+
+.backgroundColorGray {
+	background: #95a5a6;
+}
+
+.backgroundColorDarkBlue {
+	background: #2c3e50;
+}
+
+.backgroundColorLightBlue {
+	background: #3498db;
+}
+
+.backgroundColorOrange {
+	background: #f39c12;
+}
+
+.backgroundColorGreen {
+	background: #18bc9c;
+}
+
+.backgroundColorRed {
+	background: #e74c3c;
+}
+
+.sectionMain {
+	height: 480px;
+}
+
+.homeList {
+	height: 250px;
+	max-height: 250px;
+  	overflow:auto;
+  	box-sizing: border-box;
+}
+
+.homeBtn {
+	width: 150px;
+}
+
+.mainAsideList {
+	height: 350px;
+	max-height: 350px;
+  	overflow: auto;
+}
+
+.messageInput {
+	resize: none;
+	outline: none;
+	width: 100%;
+}
+
+.messageInputCont {
+	position: absolute;
+	bottom: 0;	
+	width: 70%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.px18 {
+	font-size: 18px;
+}
+
+.scrollAbleList {
+	height: 300px;
+	max-height: 300px;
+  	overflow:auto;
+  	margin:0;
+  	padding:0;
+}
+
+.roomBtn {
+	width: 110px;
+	margin-right: 10px; 
+}
+
+.newRoomBtn {
+	width: 90px;
+	margin-right: 20px; 
+}
+
+.listItemHighlight li:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.selectRoom {
+	background: #95a5a6;
+	color: white;
+}
+
+.activeRoom {
+	background: #18bc9c;
+	color: white;
+}
+
+.logout {
+	display: inline-block;
+	float: right;
+	box-sizing: border-box;
+}
+
+.userHeader {
+	display: inline-block;
+	float: right;
+	height: 60px;
+	font-size: 20px;
+	box-sizing: border-box;
+	padding: 15px;
+}
+
+.userHeaderLink{
+	color: white;
+}
+
+.userHeaderLink:hover {
+	color: #2c3e50;
+	text-decoration: none;
+}
+
+.homeTitleCont {
+	position: absolute;
+	top: 25%;
+	left:50%;
+	transform: translate(-50%, 0%);
+	//border: 5px solid #18bc9c;
+	width: 60%;
+}
+
+.loginenterBtn{
+	width: 150px;
+	height: 60px;
+	background: #18bc9c;
+	color: white;
+	font-size: 22px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.btnCont {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+.homeCont {
+	/*background: url('./img/laptop.jpg');*/
+}
+
+.loginFormCont {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width: 360px;
+	height: 360px;
+	border: 3px solid #18bc9c;
+	padding: 20px;
+}

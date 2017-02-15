@@ -1,0 +1,40 @@
+var debug = process.env.NODE_ENV !== "production";
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+  context: path.join(__dirname),
+  devtool: debug ? "inline-sourcemap" : null,
+  entry: {
+    app: "./main.js"
+  },
+  module: {
+    
+    loaders: [
+      {
+        test: /\.js?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015','stage-0'],
+          plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+        }
+      },
+
+      {
+        test: /\.css?$/,
+        loaders: ['style', 'css']
+      }
+    ]
+    
+  },
+  output: {
+    filename: "public/build/bundle.js",
+    sourceMapFilename: "public/build/bundle.map"
+  },
+  plugins: debug ? [] : [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+  ],
+};
