@@ -4,7 +4,7 @@ var express = require('express');
 var apiRoutes = express.Router();
 var passport = require('passport');
 var config = require('../config/database.js');
-var app = require('../app.js');
+var app = require('../server.js');
 var jwt = require('jwt-simple');
 
 var User = require('../models/user.js');
