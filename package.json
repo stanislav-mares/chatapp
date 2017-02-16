@@ -2,7 +2,7 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "Chat application",
-  "main": "app.js",
+  "main": "server.js",
   "author": "Stanislav Mares",
   "license": "ISC",
   "dependencies": {
@@ -47,6 +47,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   }
 }
