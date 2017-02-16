@@ -37,8 +37,16 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/stanislav-mares/chatapp.git"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   }
 }
