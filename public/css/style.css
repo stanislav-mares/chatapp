@@ -213,11 +213,6 @@ body, html {
 	color: white;
 }
 
-.userHeaderLink:hover {
-	color: #2c3e50;
-	text-decoration: none;
-}
-
 .homeTitleCont {
 	position: absolute;
 	top: 25%;
@@ -258,3 +253,9 @@ body, html {
 	border: 3px solid #18bc9c;
 	padding: 20px;
 }
+
+.newRoomFormCont {
+	width: 70%;
+	margin: auto;
+}
+

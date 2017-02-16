@@ -39,6 +39,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "webpack-dev-server --content-base ./views/ --inline --hot"
+    "start": "node server.js"
   }
 }

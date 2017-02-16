@@ -50,22 +50,17 @@ export default class NewRoom extends React.Component {
 
   	render() {
 
-  		//hned po zmene stavu neuvidime v this.state ihned novou hodnotu, nejdriv se zavole metoda render
-  		//proto vypisuji tady
-  		//console.log(this.state.roomValue);
-		//console.log(this.state.descValue);
-	    
-	    return (
-	    	<div class="text-center">
+      return (
+	    	<div class="text-center newRoomFormCont">
 	    		<h2>New Room</h2>
-	    		<form onSubmit={this.onSubmit}>
+	    		<form class="newRoomForm" onSubmit={this.onSubmit}>
 			   		<div class="form-group">
 			      		<label for="room" class="title">New room:</label>
 			      		<input onChange={this.handleChange} value={this.state.roomValue} type="text" class="form-control" name="room" placeholder="Enter room name"/>
 			    	</div>
 			    	<div class="form-group">
 			      		<label for="desc">Description:</label>
-			      		<textarea onChange={this.handleChange} value={this.state.descValue} class="form-control custom-control" name="desc" rows="3" placeholder="Description  of the room"></textarea>
+			      		<textarea onChange={this.handleChange} value={this.state.descValue} class="form-control custom-control messageInput" name="desc" rows="3" placeholder="Description  of the room"></textarea>
 			    	</div>
 			    		<button type="submit" class="btn btn-default newRoomBtn">Submit</button>
 			  			<Link to="/chat" class="btn btn-default newRoomBtn">Back</Link>

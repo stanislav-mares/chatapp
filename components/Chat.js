@@ -141,8 +141,6 @@ export default class Chat extends React.Component {
 
   recieveMessage(message) {
     
-    //console.log('recieving message');
-
     if(message.nameRoom === this.state.activeRoom.name) {
       
       this.setState({activeRoom: {name: this.state.activeRoom.name,
@@ -158,7 +156,7 @@ export default class Chat extends React.Component {
       
       console.log("Storing into database...");
 
-      axios.post('/api/newmessages', this.state.messages)
+      axios.post('/api/messages-add', this.state.messages)
         .then((resp) => {
           console.log(resp.data.msg1 + ', ' + resp.data.msg1);
         })
@@ -195,14 +193,11 @@ export default class Chat extends React.Component {
 
   recieveRoom(room) {
     
-    //console.log('recieving room');
-
     let rooms = Object.assign([], this.state.rooms);
     rooms.push(room);
 
     this.setState({rooms : rooms});
 
-    //console.log(this.state.rooms)
   }
 
   renderChildren() {
