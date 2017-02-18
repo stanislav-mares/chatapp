@@ -8,8 +8,6 @@ var app = express();
 
 var server = http.createServer(app);
 
-app.set('port', server_port);
-
 //VIEW ENGINE SETUP
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,6 +32,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
+app.set('port', port);
 
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
@@ -133,8 +132,8 @@ io.on('connection', function(socket){
 });
 
 
-server.listen(server_port, server_ip_address, function () {
-  console.log( "Listening on " + server_ip_address + ", port " + server_port )
+server.listen(port, ip, function () {
+  console.log( "Listening on " + ip + ", port " + port )
 });
 
 function normalizePort(val) {
