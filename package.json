@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "chatapp",
   "version": "1.0.0",
   "description": "Chat application",
   "main": "server.js",
@@ -36,7 +36,9 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
-    "object-assign": "4.1.0"
+    "object-assign": "4.1.0",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1"
   },
   "engine": {
     "node": "*",
