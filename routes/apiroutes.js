@@ -34,7 +34,7 @@ apiRoutes.post('/room-add', function(req, res) {
     res.json({success: false, msg: "Name of room is required!"});
   }
 
-  let newRoom = new Room({
+  var newRoom = new Room({
     name: req.body.name,
     desc: req.body.desc,
     messages: []
@@ -230,7 +230,7 @@ apiRoutes.get('/messages', function(req, res) {
 
 apiRoutes.post('/messages-add', function(req, res) {
   
-  let messages = [];
+  var messages = [];
 
   //console.log(req.body);
 
@@ -272,9 +272,9 @@ var roomMessagesUpdate = function(messages, name, res) {
           res.json({success : false, msg1: docs.length + ' messages successfully stored!', msg2: 'Room does not exists!'}); 
         }else {
           
-          let newMessagesRefs = getMessagesID(messages);
+          var newMessagesRefs = getMessagesID(messages);
 
-          let messagesRefs = room.messages === null ? [] : room.messages;
+          var messagesRefs = room.messages === null ? [] : room.messages;
 
           messagesRefs = messagesRefs.concat(newMessagesRefs);
 
