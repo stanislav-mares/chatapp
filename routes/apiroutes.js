@@ -295,7 +295,7 @@ var roomMessagesUpdate = function(messages, name, res) {
 }
 
 var getMessagesID = function(messages) {
-  let messagesID = messages.map((message) => {
+  var messagesID = messages.map((message) => {
     return (
       message._id
     ) 
