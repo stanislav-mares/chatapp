@@ -54,7 +54,6 @@ if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
 }
 
 var db = null;
-var dbDetails = new Object();
 
 var initDb = function(callback) {
   if (mongoURL == null) return;
@@ -69,9 +68,6 @@ var initDb = function(callback) {
     }
 
     db = conn;
-    dbDetails.databaseName = db.databaseName;
-    dbDetails.url = mongoURLLabel;
-    dbDetails.type = 'MongoDB';
 
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
