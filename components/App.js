@@ -33,7 +33,7 @@ export default class App extends React.Component {
      
       var TOKEN = localStorage.getItem('token');
 
-      axios.get('http://localhost:3000/api/authtest', {
+      axios.get('/api/authtest', {
         headers : {'Authorization' : TOKEN,
                    'Content-Type'  : 'application/x-www-form-urlencoded'
                   } 

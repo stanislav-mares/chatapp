@@ -209,8 +209,14 @@ body, html {
 	padding: 15px;
 }
 
-.userHeaderLink{
+.headerLink {
 	color: white;
+	text-decoration: none;
+}
+
+.headerLink:hover, .headerLink:focus{
+	color: #2c3e50;
+	text-decoration: none;
 }
 
 .homeTitleCont {
@@ -232,15 +238,15 @@ body, html {
 	padding-bottom: 13px;
 }
 
+.loginenterBtn:hover{
+	background: #16a689;
+}
+
 .btnCont {
 	position: absolute;
 	top: 50%;
 	left:50%;
 	transform: translate(-50%, -50%);
-}
-
-.homeCont {
-	/*background: url('./img/laptop.jpg');*/
 }
 
 .loginFormCont {

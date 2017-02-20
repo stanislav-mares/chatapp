@@ -20,8 +20,9 @@ export default class Header extends React.Component {
   			  <div class="navbar-header">
                 <Link to="/" class="navbar-brand">Chat application</Link>
           </div>   	     
-  		    <div class="logout">
-              <Link to="/" class="userHeaderLink userHeader" onClick={this.props.onUserLogout}>Logout</Link>
+  		    
+          <div class="logout">
+              <Link to="/" class="userHeader headerLink" onClick={this.props.onUserLogout}>Logout</Link>
               <span class="userHeader textColorDarkBlue bold">{text}</span>
           </div>
         </nav>

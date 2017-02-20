@@ -51,7 +51,7 @@ export default class Chat extends React.Component {
   }
 
   initialize(apiPath, stateType, ref) {
-    axios.get('http://localhost:3000' + apiPath)
+    axios.get(apiPath)
       .then((resp) => {
         
         let list = null;

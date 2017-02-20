@@ -8,15 +8,6 @@ export default class MessageView extends React.Component {
   
   constructor(props) { 
       super(props);
-      /*
-      this.state = { messages : this.props.messages};
-      
-      this.props.socket.on('new message', (msg) => {
-          let list = Object.assign([], this.state.messages);
-          list.push(msg);
-          this.setState({messages : list}); 
-      });
-      */ 
   }
 
   render() {
