@@ -54,6 +54,7 @@ if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
 }
 
 var db = null;
+var dbDetails = new Object();
 
 var initDb = function(callback) {
   if (mongoURL == null) return;
