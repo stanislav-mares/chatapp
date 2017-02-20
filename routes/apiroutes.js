@@ -234,7 +234,7 @@ apiRoutes.post('/messages-add', function(req, res) {
 
   //console.log(req.body);
 
-  messages = req.body.map((newMessage) => {
+  messages = req.body.map(function(newMessage) {
     return (
       new Message({
       id : newMessage.id,
@@ -295,7 +295,7 @@ var roomMessagesUpdate = function(messages, name, res) {
 }
 
 var getMessagesID = function(messages) {
-  var messagesID = messages.map((message) => {
+  var messagesID = messages.map(function(message) {
     return (
       message._id
     ) 
