@@ -89,7 +89,7 @@ app.get('*', function (req, res){
   res.render(path.resolve(__dirname, 'views', 'index.ejs'))
 });
 
-let users = {};
+var users = {};
 
 //SOCKET IO
 var io = require('socket.io')(server);
