@@ -15,7 +15,7 @@ export default class MessageWindow extends React.Component {
   render() {
   
    return (
-    	<div class="MessageWindow">
+    	<div class="messageWindow">
     		<h2 class="title">Room: <span class="bold">{this.props.activeRoom.name}</span></h2>
         <h4>{this.props.activeRoom.desc}</h4>
         <MessageView messages={this.props.activeRoom.messages}/>

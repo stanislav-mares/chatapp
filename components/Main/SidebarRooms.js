@@ -82,7 +82,7 @@ export default class SidebarRooms extends React.Component {
         		<ul id="test" class="list-group mainAsideulist listItemHighlight" ref={(ref) => {this.ulRef = ref}}>
       	       {currentRooms}    		
     	    	</ul>
-            <div>
+            <div class="roomBtnCont">
               <button class="btn btn-default roomBtn" onClick={this.onClick}>Switch room</button>
               <Link to="/newroom" class="btn btn-default roomBtn">New room</Link>
             </div>

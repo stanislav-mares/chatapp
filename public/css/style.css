@@ -47,6 +47,7 @@ body, html {
 	height: 100%;
 	box-sizing: border-box;
 	float: left;
+	position: relative;
 }
 
 .sectionWindow {
@@ -56,6 +57,8 @@ body, html {
 	float: left;
 	position: relative;
 	margin: auto;
+	border-right: 2px solid rgba(44, 62, 80, 0.1);
+	border-left: 2px solid rgba(44, 62, 80, 0.1);
 }
 
 .title {
@@ -139,6 +142,11 @@ body, html {
   	overflow: auto;
 }
 
+.messageWindow {
+	width: 70%;
+	margin: auto;
+}
+
 .messageInput {
 	resize: none;
 	outline: none;
@@ -171,12 +179,23 @@ body, html {
 
 .roomBtn {
 	width: 110px;
+	display: inline-block;
+}
+
+.roomBtn:nth-child(1) {
 	margin-right: 10px; 
 }
 
 .newRoomBtn {
 	width: 90px;
 	margin-right: 20px; 
+}
+
+.roomBtnCont {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 
 .listItemHighlight li:hover{

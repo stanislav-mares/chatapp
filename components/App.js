@@ -26,7 +26,7 @@ export default class App extends React.Component {
   }
       
   
-  componentWillMount() {
+  componentDidMount() {
 
     // Check browser support
     if (typeof(Storage) !== "undefined") {
@@ -46,11 +46,11 @@ export default class App extends React.Component {
         })
       
         .catch((err) => {
-          console.log(err);
-
           this.setState({userData: ''});
           this.setState({userAuth : {TOKEN : '', loggedIn: false}});
           localStorage.removeItem('token');
+        
+          browserHistory.push('/login');
         });
     
     } else {
@@ -60,10 +60,6 @@ export default class App extends React.Component {
     }
   }
   
-  componentDidMount() {
-    
-  }
-
   componentWillUnmount() {
     socket.emit('user logout', this.state.userData.name);
   }
