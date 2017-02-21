@@ -3,8 +3,6 @@ import React from "react";
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-
-
 export default class Login extends React.Component {
   
   constructor(props) {
@@ -14,7 +12,6 @@ export default class Login extends React.Component {
   	this.handleChangeName = this.handleChangeName.bind(this);
   	this.handleChangePass = this.handleChangePass.bind(this);
   	this.handleUserLogin = this.handleUserLogin.bind(this);
-    this.handleLoginError = this.handleLoginError.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   	 
   	}
@@ -32,14 +29,6 @@ export default class Login extends React.Component {
 
     handleUserLogin(userData, userAuth){
       this.props.onUserLogin(userData, userAuth);
-    }
-
-    handleLoginError() {
-      this.refStatusBar.innerHTML = "Wrong user name or password!";
-
-      setInterval(function(){ 
-        this.refStatusBar.innerHTML = '';           
-      }, 5000);
     }
 
     onSubmit(event) {
@@ -62,11 +51,12 @@ export default class Login extends React.Component {
     				};
 
             this.handleUserLogin(userData, userAuth);
+
         })
 
 			.catch(function(err) {
 				
-        //this.handleLoginError();
+        console.log(err);
 
       });
 
@@ -90,8 +80,7 @@ export default class Login extends React.Component {
 			      		<input onChange={this.handleChangePass} value={this.state.password} type="password" class="form-control" name="password" placeholder="Enter password" required/>
 			    	</div>
 			    	<button type="submit" class="btn btn-default newRoomBtn">Submit</button>
-            <div class="statusBar" ref={(ref) => this.refStatusBar = ref}></div>
-		  		</form>
+          </form>
 	  		</div>
 	  </div>
     );

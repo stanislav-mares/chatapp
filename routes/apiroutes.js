@@ -43,7 +43,7 @@ apiRoutes.post('/room-add', function(req, res) {
   newRoom.save(function(err) {
       if(err) {
         throw err;
-        res.json({success: false, msg: "Room with name " + newRoom.name + " already exists!"});
+        res.status(400).json({success: false, msg: "Room with name " + newRoom.name + " already exists!"});
       }else{
         res.json({success: true, msg: "Room successfully created!"});
       }
@@ -56,10 +56,10 @@ apiRoutes.delete('/room-delete/:name', function(req, res) {
     name: req.params.name
   }, function(err, result) {
         if(result.result.n == 0) {
-          res.json({success: false, msg: 'Room does not exists!'});
+          res.status(400).json({success: false, msg: 'Room does not exists!'});
         }else {
           if(err) {
-            res.json({success: false, msg: "Room not found!"});
+            res.status(400).json({success: false, msg: "Room not found!"});
           }else {
             res.json({success: true, msg: "Room successfully deleted!"});
           }
@@ -72,19 +72,18 @@ apiRoutes.delete('/room-delete/:name', function(req, res) {
 apiRoutes.post('/signup', function(req, res) {
 
   if(!req.body.name || !req.body.password) {
-    res.json({success : false, msg: 'Please enter name and password!'});
+    res.status(400).json({success : false, msg: 'Please enter name and password!'});
   } else {
     
     var newUser = new User({
       name: req.body.name,
       password: req.body.password,
-      email: req.body.email,
-      online : req.body.online
+      email: req.body.email
     });
 
     newUser.save(function(err) {
       if (err) {
-        res.json({success : false, msg: 'Error occured - user already exists!'});  
+        res.status(400).json({success : false, msg: 'Error occured - user already exists!'});  
       } else {
         res.json({success : true, msg: 'User successfully created!'}); 
       }
@@ -116,7 +115,7 @@ apiRoutes.delete('/user-delete/:name', function(req, res) {
   }, function(err, result) {
       
       if(result.result.n == 0) {
-        res.json({success: false, msg: 'User does not exists!'});
+        res.status(400).json({success: false, msg: 'User does not exists!'});
       } else {
 
         if(err) {
@@ -144,7 +143,8 @@ apiRoutes.post('/auth', function(req, res) {
 
           var token = jwt.encode(user, config.secret);  
         
-          res.json({success: true, user: user.name, token: 'JWT ' + token}); //token string must be in format JWT[space]+ token        
+          res.json({success: true, user: user.name, token: 'JWT ' + token,
+                  msg: 'User successfully logged in!'}); //token string must be in format JWT[space]+ token        
         
         } else {
           return res.status(403).send({sucess: false, msg: 'Wrong username or password!'}); //wrong password  
@@ -197,7 +197,7 @@ apiRoutes.delete('/message-delete/:id', function(req, res) {
   }, function(err, result) {
       
       if(result.result.n == 0) {
-        res.json({success: false, msg: 'Message does not exists!'});
+        res.status(400).json({success: false, msg: 'Message does not exists!'});
       } else {
 
         if(err) {
@@ -250,7 +250,7 @@ apiRoutes.post('/messages-add', function(req, res) {
   Message.create(messages, function(err, docs) {
     if (err) {
       throw err;
-      res.json({success : false, msg: 'Error during saving messages!'});                                                                                                                   
+      res.status(400).json({success : false, msg: 'Error during saving messages!'});                                                                                                                   
     }else {
 
       roomMessagesUpdate(docs, req.body[0].nameRoom, res);
@@ -269,7 +269,7 @@ var roomMessagesUpdate = function(messages, name, res) {
   }, function(err, room) {
         if(err) {
           throw err;
-          res.json({success : false, msg1: docs.length + ' messages successfully stored!', msg2: 'Room does not exists!'}); 
+          res.status(400).json({success : false, msg1: docs.length + ' messages successfully stored!', msg2: 'Room does not exists!'}); 
         }else {
           
           var newMessagesRefs = getMessagesID(messages);
@@ -281,7 +281,7 @@ var roomMessagesUpdate = function(messages, name, res) {
           Room.update({_id : room._id}, {messages : messagesRefs}, function(err) {
             if(err) {
               throw err;
-               res.json({success : false, msg1: messages.length + ' messages successfully stored!', 
+               res.status(400).json({success : false, msg1: messages.length + ' messages successfully stored!', 
                                           msg2: 'Error while updating room!'}); 
             }else {
               res.json({success : true, msg1: messages.length + ' messages successfully stored!', 

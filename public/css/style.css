@@ -42,6 +42,15 @@ body, html {
 	box-sizing: border-box;
 }
 
+#statusMessage{
+	width: 360px;
+	height: 75px;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
 .asideBar {
 	width: 20%;
 	height: 100%;
@@ -143,7 +152,7 @@ body, html {
 }
 
 .messageWindow {
-	width: 70%;
+	width: 90%;
 	margin: auto;
 }
 
@@ -175,6 +184,11 @@ body, html {
   	overflow:auto;
   	margin:0;
   	padding:0;
+}
+
+.scrollAbleList li {
+	border: none;
+	border-bottom: 1.5px solid rgba(44, 62, 80, 0.1); 
 }
 
 .roomBtn {

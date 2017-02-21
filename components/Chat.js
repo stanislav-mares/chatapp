@@ -30,10 +30,6 @@ export default class Chat extends React.Component {
     this.userLogout = this.userLogout.bind(this);
   }
 
-  componentWillMount() {
-    
-  }
-
   componentDidMount() {
     
     this.initialize('/api/users-online', 'onlineUsers', this.state.onlineUsers);
