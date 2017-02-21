@@ -1,0 +1,302 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# chatappAPI
+
+This chat API allowing consumers to make basic operations (add, view, remove) with users
+rooms and messages.
+
+## Users collection [/api/users]
+
+### List all users [GET]
+
++ Response 200 (application/json)
+
+        
+        [
+            {
+                "name": "Bob",
+                "password": "askdgnsdg5asdg5as4d",
+                "email": "Bob@gmail.com"
+            },
+            
+            {
+                "name": "Alice",
+                "password": "faasgfsggasdgg5as4d",
+                "email": "Alice@gmail.com"
+            }
+        ]
+        
+## New user [/api/signup]
+
+### Create a new user [POST]
+
++ Request (application/json)
+
+        {
+            "name": "Bob",
+            "password": "1234",
+            "email": "Bob@gmail.com"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true,
+                "msg": "User successfully created!"
+            }
+
++ Response 400 (application/json)
+    
+        {
+            "success": false,
+            "msg": "User already exists!"
+        }
+
+## Login [/api/auth]
+
+### Login a user [POST]         
+
++ Request (application/json)
+
+        {
+            "name": "Bob",
+            "password": "1234"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true,
+                "name": "Bob",
+                "token": "5g4asdg654sg6sd4ga6",
+                "msg": "User successfully logged in!"
+            }
+            
++ Response 403 (application/json)
+    
+        {
+            "success": false,
+            "msg": "Wrong username or password!"
+        }
+
+## Authorization [/api/authtest]
+
+### User authorization [POST]              
+
++ Request (application/json)        
+    
+    + Headers
+        
+            Authorization : "TOKEN"
+    
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true,
+                "name": "Bob"
+            }
+
++ Response 403 (application/json)
+    
+        {
+            "success": false,
+            "msg": "User not found!"
+        }
+
+## Delete user [/api/user-delete/{name}]
+
++ Parameters
+    + name (string) - name of the user
+
+### Delete a user [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            "success": true, 
+            "msg": "User successfully deleted!"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "success": false, 
+            "msg": "User not found!"
+        }
+
+## Users online [/api/users-online]
+
+### Names of all online users [GET]
+
++ Response 200 (application/json)
+
+        
+        {
+            "names": [
+                "Bob",
+                "Alice",
+                "Jeremy",
+                "Charlie"
+            ]
+            
+        }
+
+## Rooms collection [/api/rooms]
+
+### List of all rooms [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Sport",
+                "desc": "Conversation about sport",
+                "messages": [
+                    "message1_ObjectID",
+                    "message2_ObjectID",
+                    "message3_ObjectID"
+                ]
+            },
+            {
+                "name": "Cars",
+                "desc": "Conversation about cars",
+                "messages": [
+                    "message10_ObjectID",
+                    "message12_ObjectID",
+                    "message15_ObjectID"
+                ]
+            },
+        ]
+
+## New room [/api/room-add]
+
+### Create a new room [POST]
+        
++ Request (application/json)
+
+        {
+            "name": "Sport",
+            "desc": "Conversation about sport"
+        }    
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "success": true,
+                "msg": "Room successfully created!"
+            }        
+
++ Response 400 (application/json)
+    
+        {
+            "success": false,
+            "msg": "Room with name Sport already exists!"
+        }
+        
+## Delete room [/api/room-delete/{name}]
+
++ Parameters
+    + name (string) - name of the room
+
+### Delete a room [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            "success": true, 
+            "msg": "Room successfully deleted!"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "success": false, 
+            "msg": "Room not found!"
+        }
+
+## Messages list [/api/messages]
+
+### List of all messages [GET]
+
++ Response 200 (application/json)
+
+        
+        [
+            {
+                "id": "Bob;Tue Feb 21 2017 00:54:17",
+                "text": "Hi, how are you doing?",
+                "nameRoom": "Sport",
+                "nameUser": "Bob",
+                "time": "Tue Feb 21 2017 00:54:17"
+            },
+            
+            {
+                "id": "Alice;Tue Feb 21 2017 00:55:17",
+                "text": "Hey, great! How about you?",
+                "nameRoom": "Sport",
+                "nameUser": "Alice",
+                "time": "Tue Feb 21 2017 00:55:17"
+            }
+        ]
+
+## New message [/api/message-add]
+
+### Create new message [POST]        
+    
++ Request (application/json)
+
+        {
+            "id": "Bob;Tue Feb 21 2017 00:54:17",
+            "text": "Hi, how are you doing?",
+            "nameRoom": "Sport",
+            "nameUser": "Bob",
+            "time": "Tue Feb 21 2017 00:54:17"
+        }  
+    
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true,
+                "msg1": "1 messages successfully stored!",
+                "msg2": "Room messages successfully updated!",
+            }  
+    
++ Response 400 (application/json)
+    
+        {
+            "success": false,
+            "msg1": "1 messages successfully stored!",
+            "msg2": "Error while updating room!"
+        } 
+
+## Delete message [/api/message-delete/{id}]
+
++ Parameters
+    + id (string) - id of the message
+
+### Delete a message [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            "success": true, 
+            "msg": "Message successfully deleted!"
+        }
+
++ Response 400 (application/json)
+
+        {
+            "success": false, 
+            "msg": "Message not found!"
+        }
