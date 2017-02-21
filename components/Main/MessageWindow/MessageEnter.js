@@ -50,7 +50,7 @@ export default class MessageEnter extends React.Component {
     			<div class="messageInputCont">
             <textarea rows="3" type="text" class="form-control messageInput" value={this.state.value} 
                    placeholder="Enter a message" onChange={this.handleChange}></textarea>
-      			<button type="Submit" class="btn btn-primary">Submit</button>			
+      			<button type="submit" class="btn btn-primary">Submit</button>			
 	    	  </div>
         </form>
 	    </section>  

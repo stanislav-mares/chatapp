@@ -130,7 +130,6 @@ export default class App extends React.Component {
           <div class="row main">
            {this.renderChildren()}
           </div>
-          <div id="statusMessage"></div>
           <div class="row footer"><Footer /></div>
         </div>
     );
