@@ -1,0 +1,68 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+@import 'utils/sharedStyles/input';
+@import 'utils/sharedStyles/btn';
+
+.container {
+  grid-area: main;
+}
+
+.formCont {
+  @include centerY();
+  width: 30%;
+  height: 75%;
+  margin: auto;
+  border: 2px solid $cyan;
+  text-align: center;
+  color: $white;
+}
+
+.header {
+
+  background: $cyan;
+  height: 20%;
+
+  & h1 {
+    @include centerY();
+    font-size: 1.9em;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+.body {
+  padding: 1.3rem;
+  height: 80%;
+  box-sizing: border-box;
+}
+
+.inputCont {
+    @include centerY();
+    text-align: center;
+
+    & * {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    & label {
+      font-size: 1.2em;
+      display: block;
+    }
+
+    & input {
+
+      @extend .input2;
+
+      padding: 0.5em;
+      font-size: 1em;
+      width: 80%;
+    }
+}
+
+.btn {
+  @extend .btn;
+  font-size: 1em;
+}

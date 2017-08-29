@@ -1,0 +1,69 @@
+@import 'utils/sharedStyles/input';
+@import 'utils/sharedStyles/btn';
+@import 'utils/sharedStyles/link';
+@import 'utils/sharedStyles/textarea';
+@import 'utils/positioning';
+
+.container {
+  flex: 1 1 60%;
+  max-width: 60%;
+  border-left: 1.5px solid $cyan;
+  border-right: 1.5px solid $cyan;
+  & h2 {
+    color: $cyan;
+    text-align: center;
+  }
+}
+
+.head {
+  height: 15%;
+}
+
+.body {
+  height: 85%;
+  width: 90%;
+  margin: auto;
+}
+
+.btnCont {
+  text-align: center;
+}
+
+.btn {
+  @extend .btn;
+  font-size: 0.8em;
+  margin: 0.2em;
+}
+
+.formCont {
+  margin: auto;
+  width: 50%;
+  height: 80%;
+}
+
+.inputCont {
+  @include centerY();
+
+  & label {
+    display: block;
+    font-size: 1.2em;
+  }
+
+  & * {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  & input {
+
+    @extend .input;
+    font-size: 0.9em;
+    width: 100%;
+  }
+
+  .textarea {
+    @extend .textarea;
+    font-size: 0.9em;
+    width: 100%;
+  }
+}

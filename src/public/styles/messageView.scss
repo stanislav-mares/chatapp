@@ -1,0 +1,34 @@
+@import 'utils/colors';
+
+.container {
+  height: 70%;
+}
+
+.msgCont {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  max-height: 100%;
+}
+
+.message{
+  width: 100%;
+  border: 1px solid $white;
+  padding: 0.6em;
+  box-sizing: border-box;
+  word-wrap: break-word;
+
+  &:nth-child(odd) {
+    background: $cyanOpac008;
+  }
+
+  &:nth-child(even) {
+    background: $darkBlueOpac008;
+  }
+}
+
+.msgLabel{
+  font-size: 1em;
+  font-weight: bold;
+}

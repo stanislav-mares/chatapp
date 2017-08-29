@@ -1,0 +1,22 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+@import 'utils/sharedStyles/list';
+
+.container {
+  flex: 1 1 20%;
+  text-align: center;
+}
+
+.head {
+  height: 15%;
+
+  & h2 {
+    margin: 0;
+    @include centerY();
+    color: $cyan;
+  }
+}
+
+.listCont {
+  height: 85%;
+}

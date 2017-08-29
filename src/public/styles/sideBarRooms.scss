@@ -1,0 +1,50 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+@import 'utils/sharedStyles/list';
+@import 'utils/sharedStyles/link';
+@import 'utils/sharedStyles/btn';
+
+.container {
+  flex: 1 1 20%;
+  text-align: center;
+}
+
+.head {
+  height: 15%;
+
+  & h2 {
+    margin: 0;
+    @include centerY();
+    color: $cyan;
+  }
+}
+
+.listCont {
+  height: 75%;
+}
+
+.btnCont {
+  height: 10%;
+}
+
+.btn {
+  @extend .btn;
+
+  display: inline-block;
+  font-size: 0.8em;
+  @include centerY();
+}
+
+.list {
+  @extend .list;
+
+  & li:hover {
+    background: lightgrey;
+    cursor: pointer;
+  }
+}
+
+.activeRoom {
+  background: $cyan !important;
+  color: white;
+}

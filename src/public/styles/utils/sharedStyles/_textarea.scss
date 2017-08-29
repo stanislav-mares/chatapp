@@ -1,0 +1,9 @@
+@import "utils/sharedStyles/input";
+
+.textarea {
+  @extend .input;
+  resize: none;
+  font-size: 0.8em;
+  padding: 0.8em;
+  box-sizing: border-box;
+}

@@ -1,0 +1,46 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+
+.container {
+  grid-area: header;
+  background-color: $cyan;
+
+  & * {
+    color: $white;
+    @include centerY();
+  }
+}
+
+.titleCont *{
+  float: left;
+  margin-left: 1.2rem;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.3em;
+
+  &:hover {
+    color: $darkBlue;
+  }
+}
+
+.navigation *{
+  float: right;
+  margin-right: 1.2rem;
+}
+
+.userName {
+  color: $darkBlue;
+  font-size: 1.3em;
+  font-weight: bold;
+}

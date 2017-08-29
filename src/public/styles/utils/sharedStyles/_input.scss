@@ -1,0 +1,20 @@
+@import 'utils/colors';
+
+.input {
+
+  border: 2px solid lightgray;
+  padding: 0.5em;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $darkBlue;
+  }
+}
+
+.input2 {
+  @extend .input;
+  &:focus {
+    border: 2px solid $cyan;
+  }
+}

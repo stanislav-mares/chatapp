@@ -1,0 +1,32 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+
+.container {
+  flex: 1 1 60%;
+  max-width: 60%;
+  border-left: 1.5px solid $cyan;
+  border-right: 1.5px solid $cyan;
+}
+
+.titleCont {
+  text-align: center;
+  @include centerY();
+
+  & h2 {
+    color: $cyan;
+  }
+
+  & * {
+    margin: 0;
+  }
+}
+
+.head {
+  height: 15%;
+}
+
+.body {
+  height: 85%;
+  width: 90%;
+  margin: auto;
+}

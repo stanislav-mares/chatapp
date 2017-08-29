@@ -1,0 +1,18 @@
+@import 'utils/colors';
+@import 'utils/positioning';
+
+.container{
+  grid-area: footer;
+  color: $white;
+  text-align: center;
+}
+
+.text {
+  display: inline-block;
+  font-size: 1.2em;
+  @include centerY();
+}
+
+.backgroundVis {
+  background: $darkBlue;
+}
